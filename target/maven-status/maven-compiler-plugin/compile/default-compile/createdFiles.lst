@@ -1,0 +1,8 @@
+br\com\venda\controller\ProdutoController.class
+br\com\venda\model\Produto.class
+br\com\venda\VendaApplication.class
+br\com\venda\controller\ClienteController.class
+br\com\venda\controller\LoginController.class
+br\com\venda\repository\ClientesRepository.class
+br\com\venda\model\Clientes.class
+br\com\venda\repository\ProdutoRepository.class

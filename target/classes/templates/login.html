@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+  <link href="css/index.css" rel="stylesheet" type="text/css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"/>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+    <style>
+        .text{
+            float:left;
+            font-size: larger;
+            padding-top: 15%;
+            padding-left: 5%;
+        }
+        .r{
+            background-color: #103a5e;
+            float: right;
+            width: 50%;
+        }
+        .log{
+            width: 40%;
+            margin-top: 29%;
+            margin-left: 24%;
+            margin-bottom: 50.1%;
+        }
+        .form-label, .form-check-label{
+            color:rgb(253, 252, 252);
+        }
+        button[type="submit"]{
+           width: 100%;
+        }
+    </style>
+<body>
+  <div class="text">
+    <h2>Olá seja bem vindo</h2><br>
+    <p>É o seu primeiro acesso ? <a href="/register">Crie sua conta aqui.</a></p>
+    <p>Digite seu E-mail e Senha para ter acesso ao nosso sistema</p>
+
+    <div class="alert alert-danger d-flex align-items-center" role="alert" th:if="${error}">
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+      <div>
+          Usuario ou senha inválidos
+      </div>
+
+    </div>
+
+    <div class="alert alert-primary d-flex align-items-center" role="alert" th:if="${disconect}">
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+      <div>
+        Você está desconectado!
+      </div>
+    </div>
+
+  </div>
+  <div class="r">
+ 
+    <div class="log">
+      
+      <form class="row g-3" action="/logon" th:object="${clientes}" method="POST">
+          <div class="col-12">
+            <label for="inputEmail" class="form-label">E-mail</label>
+            <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="exemple@exemple.com" required>
+          </div>
+          <div class="col-12">
+            <label for="inputPassword" class="form-label">Senha</label>
+            <input type="password" class="form-control" id="inputPassword4" name="senha" placeholder="***********" required>
+          </div>
+          <br>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Entrar</button>
+          </div>
+      </form>
+    </div>
+  </div>
+</body>  
+</html>
+

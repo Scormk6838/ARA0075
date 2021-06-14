@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="https://www.thymeleaf.org">
+<head>
+  <link href="css/index.css" rel="stylesheet" type="text/css"/>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous"/>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head>
+    <style>
+        .text{
+            float:left;
+            font-size: larger;
+            padding-top: 15%;
+            padding-left: 5%;
+        }
+        .r{
+            background-color: #103a5e;
+            float: right;
+            width: 50%;
+        }
+        .log{
+            width: 80%;
+            margin-top: 29%;
+            margin-left: 8%;
+            margin-bottom: 23.2%;
+        }
+        button[type="submit"]{
+           width: 100%;
+        }
+        .form-label, .form-check-label{
+            color:rgb(253, 252, 252);
+        }
+    </style>
+<body>
+  <div class="text">
+    <h2>Cadastro</h2><br>
+    <p>Digite suas informações para ter acesso ao nosso sistema</p>
+
+    <div class="alert alert-danger d-flex align-items-center" role="alert" th:if="${errorCad}">
+      <svg class="bi flex-shrink-0 me-2" width="24" height="24" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg>
+      <div>
+        O e-mail digitado ja esta sendo usado.
+      </div>
+    </div>
+
+  </div>
+  <div class="r">
+ 
+    <div class="log">      
+        <form class="row g-3" action="/salvarCliente" th:object="${clientes}" method="POST">
+            <div class="col-mb-6">
+              <label for="inputEmail" class="form-label">Nome</label>
+              <input type="text" class="form-control" id="inputEmail4" name="nome" placeholder="Dezêncio Feverêncio de Oitenta e Cinco" required>
+            </div>
+            <div class="col-12">
+              <label for="inputEmail" class="form-label">Endereço</label>
+              <input type="text" class="form-control" id="inputEmail4" name="endereco" placeholder="Rua adeus, 00 - Rio de Janeiro" required>
+            </div>
+            <div class="col-mb-7">
+              <label for="inputState" class="form-label">Estado</label>
+              <select id="inputState" class="form-select" name="estado" required>
+                  <option selected>Selecione...</option>
+                  <option value="Sao Paulo">São Paulo</option>
+                  <option value="Rio de Janeiro">Rio de Janeiro</option>
+                  <option value="Bahia">Bahia</option>
+              </select>
+            </div>
+            <div class="col-mb-6">
+              <label for="inputEmail" class="form-label">E-mail</label>
+              <input type="email" class="form-control" id="inputEmail4" name="email" placeholder="exemple@exemple.com" required>
+            </div>
+            <div class="col-mb-6">
+              <label for="inputPassword" class="form-label">Senha</label>
+              <input type="password" class="form-control" id="inputPassword4" name="senha" placeholder="***********" required>
+            </div>
+            <br>
+            <br>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary">Entrar</button>
+            </div>
+        </form>
+    </div>
+  </div>
+</body>  
+</html>
+
+    
+    
+<!--<body>
+  <div class="text">
+      <h2>Crie sua conta</h2><br>
+      <p>Preencha o formulario ao lado para criar sua conta</p>
+  </div>
+  <div class="c">
+    <div class="cad">  
+        <form class="row g-3">
+        <div class="col-md-6">
+          <label for="inputEmail4" class="form-label">Nome</label>
+          <input type="text" class="form-control" id="inputEmail4" name="nome"placeholder="Henrique" required>
+        </div>
+        <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Sobrenome</label>
+          <input type="text" class="form-control" id="inputPassword4" name="lastname"placeholder="Vieira" required>
+        </div>
+          <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input type="email" class="form-control" id="inputEmail4" name="email"placeholder="exemple@exemple.com" required>
+          </div>
+          <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Password</label>
+            <input type="password" class="form-control" id="inputPassword4" name="password" placeholder="***********" required>
+          </div>
+          <div class="col-12">
+            <label for="inputAddress" class="form-label">Endereço</label>
+            <input type="text" class="form-control" id="inputAddress"  name="endereco" placeholder="1234 Main St" required>
+          </div>
+          <div class="col-md-6">
+            <label for="inputCity" class="form-label">Cidade</label>
+            <input type="text" class="form-control" id="inputCity" name="cidade" placeholder="São Paulo" required>
+          </div>
+          <div class="col-md-6">
+            <label for="inputState" class="form-label">Estado</label>
+            <select id="inputState" class="form-select" name="estado" required>
+              <option selected>Selecione...</option>
+              <option>...</option>
+            </select>
+          </div>
+          <div class="col-12">
+            <div class="form-check">
+              <input class="form-check-input" type="checkbox" id="gridCheck">
+              <label class="form-check-label" for="gridCheck" required>
+                Eu aceito os termos
+              </label>
+            </div>
+          </div>
+          <div class="col-12">
+            <button type="submit" class="btn btn-primary">Finalizar Cadastro</button>
+          </div>
+        </form>
+      </div>
+  </div>
+</body>  
+</html>-->

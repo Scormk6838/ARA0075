@@ -1,0 +1,87 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 5 de jun. de 2021, 11:42:27
+    Author     : Evandro
+*/
+
+*{
+    color:rgb(0, 0, 0);
+}
+.container{
+    padding-top: 5%;
+}
+.information{
+    border-left: solid 3px rgb(24, 113, 185);
+    border-radius: 3px;;
+    padding: 10px 8px 10px;
+}
+.inf{
+    font-family: 'Courier New', Courier, monospace;
+    letter-spacing: 2px;
+    color: black;
+}
+.btn-primary{
+    float: right;
+}
+.tb{
+    width: 100%;
+    font-weight: 100;
+    font-size: medium;
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    
+}
+.tb thead th{
+    border-bottom: 1px solid rgb(24, 113, 185);
+    background-color: rgb(24, 113, 185);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
+}
+.tb tbody{
+    letter-spacing: 2px;
+}
+tr:hover{
+    background-color: rgba(0, 0, 0, 0.329);
+}
+footer{
+    background-color: rgb(30, 113, 185);
+   
+    padding: 1%;
+}
+span{
+     color: rgb(255, 255, 255);
+}
+.modal-title, .modal-body h6{color: black;}
+
+.log{
+    padding-left: 40%;
+    padding-right: 40%;
+    padding-top: 10%;
+}
+
+.cad{
+    color: rgb(0, 0, 0);
+    
+    padding-left: 30%;
+    padding-right: 30%;
+    padding-top: 10%;
+}
+.form-label, .form-check-label{
+    color:black;
+}
+button[type="submit"]{
+    width: 100%;
+}
+.cad h6,.log h6{
+    font-size: 25px;
+    text-align: center;
+    color: black;
+    letter-spacing: 3px;
+    margin-bottom: 4%;
+}
+.log p{letter-spacing: 3px; text-align: center; color: black; margin-bottom: 5%;}
